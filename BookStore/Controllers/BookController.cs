@@ -57,11 +57,7 @@ public class BookController : ControllerBase
         var books = BookList.OrderByDescending(x => x.Id).ToList();
 
         return books;
-
-
     }
-
-
   
 
 
@@ -116,7 +112,7 @@ public class BookController : ControllerBase
     public IActionResult UpdateBook(int Id,[FromBody]Book UpdatedBook) //Model Binding Body
     {
         var book = BookList.SingleOrDefault(x => x.Id== Id);
-        if(book is null) { return BadRequest(); }
+        if (book is null) { return BadRequest(); }
 
         book.Id = UpdatedBook.Id!=default?UpdatedBook.Id:book.Id;
         book.Title = UpdatedBook.Title!=default?UpdatedBook.Title:book.Title;
@@ -163,12 +159,6 @@ public class BookController : ControllerBase
 
         return BadRequest(ModelState);
     }
-
-
-
-
-
-
 
 
    
