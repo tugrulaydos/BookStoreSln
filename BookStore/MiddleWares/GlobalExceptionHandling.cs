@@ -77,7 +77,7 @@ namespace BookStore.MiddleWares
                 stackTrace = exception.StackTrace;
             }
 
-            var exceptionResult = JsonSerializer.Serialize(new { error = message });
+            var exceptionResult = JsonSerializer.Serialize(new { error = message, stackTrace });
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)status;
 
