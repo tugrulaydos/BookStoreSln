@@ -63,7 +63,7 @@ public class BookController : ControllerBase
     }
 
     [HttpPut("{Id}")]
-    public IActionResult UpdateBook(int Id,[FromBody]Book UpdatedBook) 
+    public IActionResult UpdateBook([FromRoute]int Id,[FromBody]Book UpdatedBook) 
     {
         
 
